@@ -8,7 +8,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@development
+      - uses: actions/checkout@daily_updater
       - name: Update
         run: |
           git config user.name "Daily update action"
@@ -17,6 +17,6 @@ jobs:
           rake
           git add .
           git commit -m "daily update!"
-          git push origin development
+          git push origin daily_updater
 
 
