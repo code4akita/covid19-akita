@@ -14,7 +14,9 @@ jobs:
           git config user.name "Daily update action"
           git config user.email "kito@itosoft.com"
           git remote set-url origin https://katsuyoshi:${{ secrets.GITHUB_PASS }}@github.com/katsuyoshi/covid19-akita
+          cd tool/ruby
           rake
+          cd ../../
           git add .
           git commit -m "daily update!"
           git push origin daily_updater
