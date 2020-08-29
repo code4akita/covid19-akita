@@ -2,7 +2,7 @@ name: Daily updater
 
 on:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '0 23 * * *'
 
 jobs:
   build:
