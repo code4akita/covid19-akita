@@ -43,7 +43,9 @@
             href="https://www.pref.akita.lg.jp/pages/archive/16317#soudannmadoguchi"
             target="_blank"
             rel="noopener noreferrer"
-            >{{ $t('「新型コロナウイルス感染症について　相談窓口(個人向け)」') }}</a
+            >{{
+              $t('「新型コロナウイルス感染症について 相談窓口(個人向け)」')
+            }}</a
           >
         </li>
       </ul>

@@ -116,9 +116,9 @@ const config: Configuration = {
       icons: false
     }
   },
-  googleAnalytics: {
-    id: ''//削除
-  },
+  // googleAnalytics: {
+  //   id: ''//削除
+  // },
   build: {
     plugins: [
       new webpack.ProvidePlugin({

@@ -1,14 +1,27 @@
 {
     "newsItems": [
+<<<<<<< HEAD
       {
-          "date": "2020\/08\/18",
-          "url": "https://www.youtube.com/watch?v=JbSaxGz6UMA",
-          "text": "令和2年8月18日「秋田県臨時記者会見（県内44例目の新型コロナウイルス感染者の発生について）」"
+            "date": "2020\/11\/29",
+            "url": "https://www.youtube.com/watch?v=966TSZ6n0yg&feature=youtu.be",
+            "text": "令和2年11月29日「知事臨時記者会見（県外との往来等における感染防止対策の徹底について）」"
       },
       {
-            "date": "2020\/08\/12",
-            "url": "https://www.pref.akita.lg.jp/pages/archive/51498",
-            "text": "新型コロナウイルス感染警戒レベルについて"
+          "date": "2020\/11\/26",
+          "url": "https://www.pref.akita.lg.jp/pages/archive/54120",
+          "text": "クラスター発生に関するお知らせ"
+      }
+=======
+        {
+            "date": "2020\/03\/29",
+            "url": "https:\/\/www.metro.tokyo.lg.jp\/tosei\/governor\/governor\/katsudo\/2020\/03\/27_00.html",
+            "text": "週末向け新型コロナウイルス感染症に関する知事メッセージ"
+        },
+        {
+            "date": "2020\/03\/30",
+            "url": "https:\/\/www.metro.tokyo.lg.jp\/tosei\/hodohappyo\/press\/2020\/03\/30\/40.html",
+            "text": "新規事業「緊急販路開拓助成事業」中小企業の販路開拓を支援します"
         }
+>>>>>>> 2c8462b88e83277120385de539b2cf36e9b56663
     ]
 }

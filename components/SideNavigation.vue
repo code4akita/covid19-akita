@@ -16,9 +16,8 @@
             :alt="$t('秋田県')"
           />
           <div class="SideNavigation-HeaderText">
-          {{ $t('menu/新型コロナウイルス感染症') }}<br />{{
-             $t('menu/対策サイト')
-          }}
+            {{ $t('menu/新型コロナウイルス感染症') }}<br />
+            {{ $t('menu/対策サイト') }}
           </div>
         </nuxt-link>
       </h1>
@@ -34,7 +33,7 @@
       </v-icon>
 
       <nav class="SideNavigation-Menu">
-<!--
+        <!--
         <div class="SideNavigation-Language">
           <div
             v-if="this.$i18n.locales.length > 1"
@@ -86,7 +85,7 @@
 <script lang="ts">
 import Vue from 'vue'
 import { TranslateResult } from 'vue-i18n'
-import LanguageSelector from '@/components/LanguageSelector.vue'
+// import LanguageSelector from '@/components/LanguageSelector.vue'
 import MenuList from '@/components/MenuList.vue'
 
 type Item = {
@@ -98,7 +97,7 @@ type Item = {
 
 export default Vue.extend({
   components: {
-    LanguageSelector,
+    // LanguageSelector,
     MenuList
   },
   props: {
@@ -122,18 +121,16 @@ export default Vue.extend({
           divider: true
         },
         {
-        title: this.$t('秋田県公式サイト 美の国あきたネット'),
-        link: 'https://www.pref.akita.lg.jp/'
+          title: this.$t('秋田県公式サイト 美の国あきたネット'),
+          link: 'https://www.pref.akita.lg.jp/'
         },
         {
           title: this.$t('秋田県の感染者関連の情報'),
-          link:
-            'https://www.pref.akita.lg.jp/pages/archive/51592'
+          link: 'https://www.pref.akita.lg.jp/pages/archive/51592'
         },
         {
           title: this.$t('秋田県知事記者会見'),
-          link:
-            'https://www.pref.akita.lg.jp/pages/genre/21552',
+          link: 'https://www.pref.akita.lg.jp/pages/genre/21552',
           divider: true
         },
         {
