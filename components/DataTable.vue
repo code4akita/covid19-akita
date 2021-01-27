@@ -15,7 +15,7 @@
       class="cardTable"
     />
     <div class="note">
-      {{ $t('※退院には、死亡退院を含む') }}
+      <!-- 次の行の文字列に {{ $t('※退院には死亡退院を含む') }} が入ってた、追加するかも -->
     </div>
     <template v-slot:infoPanel>
       <data-view-basic-info-panel

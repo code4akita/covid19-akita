@@ -1,5 +1,17 @@
 {
     "newsItems": [
+<<<<<<< HEAD
+      {
+            "date": "2020\/11\/29",
+            "url": "https://www.youtube.com/watch?v=966TSZ6n0yg&feature=youtu.be",
+            "text": "令和2年11月29日「知事臨時記者会見（県外との往来等における感染防止対策の徹底について）」"
+      },
+      {
+          "date": "2020\/11\/26",
+          "url": "https://www.pref.akita.lg.jp/pages/archive/54120",
+          "text": "クラスター発生に関するお知らせ"
+      }
+=======
         {
             "date": "2020\/03\/29",
             "url": "https:\/\/www.metro.tokyo.lg.jp\/tosei\/governor\/governor\/katsudo\/2020\/03\/27_00.html",
@@ -10,5 +22,6 @@
             "url": "https:\/\/www.metro.tokyo.lg.jp\/tosei\/hodohappyo\/press\/2020\/03\/30\/40.html",
             "text": "新規事業「緊急販路開拓助成事業」中小企業の販路開拓を支援します"
         }
+>>>>>>> 2c8462b88e83277120385de539b2cf36e9b56663
     ]
 }

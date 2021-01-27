@@ -64,7 +64,7 @@ export default Vue.extend({
   props: {
     value: {
       type: String,
-      default: 'transition'
+      default: 'cumulative'
     },
     targetId: {
       type: String,

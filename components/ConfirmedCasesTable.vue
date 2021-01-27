@@ -31,10 +31,11 @@
                   <!-- eslint-disable vue/no-v-html-->
                   <span v-html="$t('軽症・<br />中等症')" />
                   <!-- eslint-enable vue/no-v-html-->
-                  <span>
+                  <span v-if="軽症中等症 !== null">
                     <strong>{{ 軽症中等症 }}</strong>
                     <span :class="$style.unit">{{ $t('人') }}</span>
                   </span>
+                  <span v-else> --- </span>
                 </div>
               </div>
             </li>
@@ -42,14 +43,29 @@
               <div :class="$style.pillar">
                 <div :class="$style.content">
                   <span>{{ $t('重症') }}</span>
-                  <span>
+                  <span v-if="重症 !== null">
                     <strong>{{ 重症 }}</strong>
                     <span :class="$style.unit">{{ $t('人') }}</span>
                   </span>
+                  <span v-else> --- </span>
                 </div>
               </div>
             </li>
           </ul>
+        </li>
+        <li :class="[$style.box, $style.staying]">
+          <div :class="$style.pillar">
+            <div :class="$style.content">
+              <!-- eslint-disable vue/no-v-html-->
+              <span v-html="$t('宿泊療養')" />
+              <!-- eslint-enable vue/no-v-html-->
+              <span v-if="宿泊療養 !== null">
+                <strong>{{ 宿泊療養 }}</strong>
+                <span :class="$style.unit">{{ $t('人') }}</span>
+              </span>
+              <span v-else> --- </span>
+            </div>
+          </div>
         </li>
         <li :class="[$style.box, $style.deceased]">
           <div :class="$style.pillar">
@@ -65,7 +81,7 @@
         <li :class="[$style.box, $style.recovered]">
           <div :class="$style.pillar">
             <div :class="$style.content">
-              <span>{{ $t('退院') }}</span>
+              <span>{{ $t('退院') }}・<br />{{ $t('療養解除') }}</span>
               <span>
                 <strong>{{ 退院 }}</strong>
                 <span :class="$style.unit">{{ $t('人') }}</span>
@@ -96,12 +112,16 @@ export default Vue.extend({
       type: Number,
       required: true
     },
+    宿泊療養: {
+      validator: prop => typeof prop === 'number' || prop === null,
+      required: true
+    },
     軽症中等症: {
-      type: Number,
+      validator: prop => typeof prop === 'number' || prop === null,
       required: true
     },
     重症: {
-      type: Number,
+      validator: prop => typeof prop === 'number' || prop === null,
       required: true
     },
     死亡: {
@@ -248,6 +268,7 @@ $default-boxdiff: 35px;
     width: calc(100% / 2 - #{$default-bdw});
   }
 
+  &.staying,
   &.deceased,
   &.recovered {
     margin-left: $default-bdw;

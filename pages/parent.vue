@@ -1,7 +1,7 @@
 <template>
   <div class="Parent">
     <page-header class="mb-3">
-      {{ $t('臨時休校中の新型コロナウイルス感染症対応についてのお願い') }}
+      {{ $t('感染予防と相談窓口') }}
     </page-header>
     <StaticCard>
       <h3>1. {{ $t('感染予防・健康管理') }}</h3>
@@ -9,7 +9,7 @@
         <li>
           {{
             $t(
-              '不特定多数の人の集まる場所等への外出を避け、基本的に自宅で過ごしてください。'
+              '換気が悪く、人が密に集まって過ごすような空間に集団で集まることは避けてください。'
             )
           }}
         </li>
@@ -35,22 +35,20 @@
     <StaticCard>
       <h3>2. {{ $t('感染症を疑う場合の対応') }}</h3>
       <ul>
-        <li>{{ $t('各保健所にご相談ください') }}</li>
+        <li>{{ $t('各相談窓口にご相談ください') }}</li>
         <li>
-          {{ $t('各保健所の電話番号について') }}
+          {{ $t('相談窓口の電話番号について') }}
           <br />
           <a
-            href="https://www.fukushihoken.metro.tokyo.lg.jp/iryo/kansen/coronasodan.html"
+            href="https://www.pref.akita.lg.jp/pages/archive/16317#soudannmadoguchi"
             target="_blank"
             rel="noopener noreferrer"
-            >{{ $t('「新型コロナウイルス感染症にかかる相談窓口について」') }}</a
+            >{{
+              $t('「新型コロナウイルス感染症について 相談窓口(個人向け)」')
+            }}</a
           >
         </li>
       </ul>
-    </StaticCard>
-    <StaticCard>
-      <h3>3. {{ $t('その他.parent') }}</h3>
-      <p>{{ $t('詳細は、各学校からのお知らせ等をご確認ください。') }}</p>
     </StaticCard>
   </div>
 </template>
@@ -68,7 +66,7 @@ export default Vue.extend({
   },
   head(): MetaInfo {
     return {
-      title: this.$t('お子様をお持ちの皆様へ') as string
+      title: this.$t('感染予防と相談窓口') as string
     }
   }
 })

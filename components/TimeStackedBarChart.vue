@@ -3,7 +3,7 @@
     <template v-slot:button>
       <ul :class="$style.GraphDesc">
         <li>
-          {{ $t('（注）医療機関が保険適用で行った検査は含まれていない') }}
+          {{ $t('（注）報道資料で公開されている検査のみを計上する') }}
         </li>
         <li>
           {{ $t('（注）同一の対象者について複数の検体を検査する場合あり') }}
@@ -190,7 +190,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     }
   },
   data: () => ({
-    dataKind: 'transition',
+    dataKind: 'cumulative',
     canvas: true
   }),
   computed: {
