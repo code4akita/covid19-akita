@@ -23,7 +23,8 @@ def update_data
   data['patients']['data'] = begin
     current_data['感染者の概要']['context'].map do |e|
       a = e["陽性確認日"].scan(/\d+/).to_a.map(&:to_i)
-      d = Date.new(2020, *a)
+      a.unshift 2020 if a.size == 2
+      d = Date.new(*a)
       t = d.iso8601
       {
         "例目"        => e["県内症例"],
@@ -41,8 +42,9 @@ def update_data
   data['patients_summary']['data'] = begin
     h = current_data['感染者の概要']['daily_total']
     (Date.new(2020, 3, 1)..Date.today).map do |d|
-      k = "#{d.month}月#{d.day}日"
-      c = h[k] || 0
+      k1 = "#{d.month}月#{d.day}日"
+      k2 = "#{d.year}年#{k1}"
+      c = h[k2] || h[k1] || 0
       t = d.iso8601
       {
         "日付"  => t,
@@ -55,8 +57,14 @@ def update_data
   data['inspection_persons']['labels'] = begin
     current_data['検査実施件数の推移']['context'].reverse.map do |e|
       # 全角数字が含まれていた
-      a = e["期間"].scan(/[0-9０-９]+/).to_a.map(&:to_i)[2,2]
-      d = Date.new(2020, *a)
+      a = e["期間"].scan(/[0-9０-９]+/).to_a.map(&:to_i)
+      if a.size == 4
+        a.unshift 2020
+        e['期間'] = "#{a[0]}年#{a[1]}月#{a[2]}日～#{a[3]}月#{a[4]}日"
+      end
+      a[0] = 2020 + a[0] - 2 if a[0] < 2020    # 令和 -> 西暦
+      a = a[0, 3]
+      d = Date.new(*a)
       t = d.iso8601
     end
   end
