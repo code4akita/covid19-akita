@@ -1,0 +1,23 @@
+name: Daily updater
+
+on:
+  schedule:
+    - cron: '0 23 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@daily_updater
+      - name: Update
+        run: |
+          git config user.name "Daily update action"
+          git config user.email "kito@itosoft.com"
+          git remote set-url origin https://katsuyoshi:${{ secrets.GITHUB_PASS }}@github.com/code4akita/covid19-akita
+          curl -X PUT https://covid19-data-akita.herokuapp.com/update
+          cd tool/ruby
+          rake
+          cd ../../
+          git add .
+          git commit -m "daily update!"
+          # git push origin daily_updater
