@@ -8,7 +8,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@daily_updater
+      - uses: actions/checkout@development
       - name: Update
         run: |
           git config user.name "Daily update action"
