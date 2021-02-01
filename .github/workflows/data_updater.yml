@@ -20,10 +20,6 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Install the hub command
-      - name: install hub
-        uses: geertvdc/setup-hub@v1.0.0
-
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
         with:
@@ -31,6 +27,10 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: 2.6
+
+      # Install the hub command
+      - name: install hub
+      - uses: geertvdc/setup-hub@master
 
       # Rebase from development
       - name: Rebase from development
@@ -59,7 +59,7 @@ jobs:
 
       # Create its pull-request
       # @see https://www.ritolab.com/entry/206#aj_3
-      name: Create Pull Request
+      - name: Create Pull Request
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
