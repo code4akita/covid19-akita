@@ -43,3 +43,4 @@ jobs:
           git config user.name "Daily update action"
           git config user.email "kito@itosoft.com"
           git commit -m "daily update!" -a
+          git push -u origin
