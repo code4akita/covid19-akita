@@ -48,6 +48,6 @@ jobs:
       # merge to master
       - name: Merge to master
         run: |
-          git checkout master
+          git checkout -b master origin/master
           git merge development
           git push -u origin
