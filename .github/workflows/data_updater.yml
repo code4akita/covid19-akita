@@ -59,7 +59,7 @@ jobs:
 
       # Create its pull-request
       # @see https://www.ritolab.com/entry/206#aj_3
-      name: Create Pull Request
+      - name: Create Pull Request
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
