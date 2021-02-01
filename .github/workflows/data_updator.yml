@@ -36,3 +36,10 @@ jobs:
           bundle
           rake
           cd ../../
+
+      # Commit data.json
+      - name: Run a updator data.json
+        run: |
+          git config user.name "Daily update action"
+          git config user.email "kito@itosoft.com"
+          git commit -m "daily update!" -a
