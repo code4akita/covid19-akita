@@ -68,7 +68,7 @@ jobs:
           DATE=`date +"%Y-%m-%d"`
           git config user.name "Daily update action"
           git config user.email "kito@itosoft.com"
-          git -m "Daily update : $DATE" -a
+          git commit -m "Daily update : $DATE" -a
           git push -u origin
 
       # Create its pull-request
