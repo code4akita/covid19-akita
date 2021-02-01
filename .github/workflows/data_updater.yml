@@ -33,8 +33,9 @@ jobs:
         run: |
           git config user.name "Daily update action"
           git config user.email "kito@itosoft.com"
-          git fetch
-          git merge origin/development
+          git branch development origin/development
+          git checkout daily_update
+          git rebase development
           git push -u origin
 
       # Update data.json
