@@ -30,7 +30,7 @@ jobs:
 
       # Install the hub command
       - name: install hub
-      - uses: geertvdc/setup-hub@master
+        uses: geertvdc/setup-hub@master
 
       # Rebase from development
       - name: Rebase from development
