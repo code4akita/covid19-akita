@@ -74,8 +74,15 @@ jobs:
 
       # Create its pull-request
       - name: Create Pull Request
+        env:
+          TZ: 'Asia/Tokyo'
+          DATE: `date +"%Y/%m/%d"`
         id: cpr
         uses: peter-evans/create-pull-request@v3
+        branch: create-pull-request/daily_update
+        commit-message: [Daily update] $DATE
+        title: [Daily update] $DATE
+
       - name: Check outputs
         run: |
           echo "Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}"
