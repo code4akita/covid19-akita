@@ -5,8 +5,8 @@ name: Data updater
 # Controls when the action will run. 
 on:
   # Triggers the workflow on push or pull request events but only for the development branch
-  #push:
-  #  branches: [ daily_update ]
+  schedule:
+    - cron: '0 0,9 * * *'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -23,46 +23,40 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
         with:
-          ref: daily_update
+          ref: development
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: 2.6
 
-      # Install the hub command
-      - name: install hub
-      - uses: geertvdc/setup-hub@master
-
-      # Rebase from development
-      - name: Rebase from development
-        run: |
-          git config user.name "Daily update action"
-          git config user.email "kito@itosoft.com"
-          git fetch
-          git rebase origin/development
-          git push -u origin
-
-      # Update data.json
-      - name: Run a updater data.json
+      # Update data
+      - name: Update data
         run: |
           cd tool/ruby
           bundle
           rake
           cd ../../
 
-      # Commit data.json
-      - name: Commit to development
-        run: |
-          git config user.name "Daily update action"
-          git config user.email "kito@itosoft.com"
-          git commit -m "daily update!" -a
-          git push -u origin
-
-      # Create its pull-request
-      # @see https://www.ritolab.com/entry/206#aj_3
-      - name: Create Pull Request
+      # prepare veriables
+      - name: Prepare variables
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TZ: 'Asia/Tokyo'
         run: |
           DATE=`date +"%Y/%m/%d"`
-          hub pull-request -m "Daily update $DATE" -b origin:master -h origin:daily_update
-          
+          echo ::set-output name=date::$DATE
+
+      # Create its pull-request
+      - name: Create Pull Request
+        env:
+          TZ: 'Asia/Tokyo'
+          DATE: ${{ steps.prepare_variables.outputs.date }}
+        id: cpr
+        uses: peter-evans/create-pull-request@v3
+        with:
+          branch: create-pull-request/daily_update
+          commit-message: '[Daily update]: $DATE'
+          title: '[Daily update]: $DATE'
+
+      - name: Check outputs
+        run: |
+          echo "Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}"
+          echo "Pull Request URL - ${{ steps.cpr.outputs.pull-request-url }}"
