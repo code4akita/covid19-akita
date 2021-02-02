@@ -72,16 +72,23 @@ jobs:
       #    git commit -m "Daily update : $DATE" -a
       #    git push --set-upstream origin $BRANCH_NAME
 
+      # prepare veriables
+      - name: Prepare variables
+        run: |
+          DATE=`date +"%Y/%m/%d"`
+          echo ::set-output name=date::$DATE
+
       # Create its pull-request
       - name: Create Pull Request
         env:
           TZ: 'Asia/Tokyo'
+          DATE: ${{ steps.prepare_variables.outputs.date }}
         id: cpr
         uses: peter-evans/create-pull-request@v3
         with:
           branch: create-pull-request/daily_update
-          commit-message: [Daily update]
-          title: [Daily update]
+          commit-message: '[Daily update]: $DATE'
+          title: '[Daily update]: $DATE'
 
       - name: Check outputs
         run: |
