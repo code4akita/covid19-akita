@@ -78,7 +78,7 @@ jobs:
           TZ: 'Asia/Tokyo'
         id: cpr
         uses: peter-evans/create-pull-request@v3
-        branch: create-pull-request/daily_update
+        #branch: create-pull-request/daily_update
         commit-message: [Daily update]
         title: [Daily update]
 
