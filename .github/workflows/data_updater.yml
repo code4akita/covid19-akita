@@ -74,9 +74,9 @@ jobs:
 
       # Create its pull-request
       - name: Create Pull Request
+        DATE=`date +"%Y/%m/%d"`
         env:
           TZ: 'Asia/Tokyo'
-          DATE: `date +"%Y/%m/%d"`
         id: cpr
         uses: peter-evans/create-pull-request@v3
         branch: create-pull-request/daily_update
