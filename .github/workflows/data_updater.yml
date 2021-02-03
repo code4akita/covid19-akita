@@ -44,23 +44,24 @@ jobs:
 
       # prepare veriables
       - name: Prepare variables
+        id: prepare_variables
         env:
           TZ: 'Asia/Tokyo'
         run: |
           DATE=`date +"%Y/%m/%d"`
-          echo ::set-output name=date::$DATE
+          echo "::set-output name=date::$DATE"
 
       # Create its pull-request
       - name: Create Pull Request
         env:
           TZ: 'Asia/Tokyo'
-          DATE: ${{ steps.prepare_variables.outputs.date }}
+          DATE: "${{ steps.prepare_variables.outputs.date }}"
         id: cpr
         uses: peter-evans/create-pull-request@v3
         with:
           branch: create-pull-request/daily_update
-          commit-message: '[Daily update]: $DATE'
-          title: '[Daily update]: $DATE'
+          commit-message: "[Daily update]: $DATE"
+          title: "[Daily update]: $DATE"
 
       - name: Check outputs
         run: |
