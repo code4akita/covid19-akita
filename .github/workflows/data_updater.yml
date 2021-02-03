@@ -28,7 +28,13 @@ jobs:
         with:
           ruby-version: 2.6
 
-      # Update data
+      # Scraping data
+      - name: curl
+        uses: wei/curl@v1
+        with:
+          args: -X PUT https://covid19-data-akita.herokuapp.com/update
+
+      # Update data.json
       - name: Update data
         run: |
           cd tool/ruby
