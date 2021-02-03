@@ -10,7 +10,7 @@ on:
 jobs:
   job:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.merged == true && startsWith(github.event.pull_request.title, "[Daily update]")
+    if: github.event.pull_request.merged == true && startsWith(github.event.pull_request.title, '[Daily update]')
 
     steps:
       # Create a pull-request
