@@ -53,8 +53,8 @@ jobs:
         uses: peter-evans/create-pull-request@v3
         with:
           branch: create-pull-request/daily_update
-          commit-message: ${{"[Daily update]: "}}${{$DATE}}
-          title: ${{"[Daily update]: "}}${{$DATE}}
+          commit-message: "[Daily update]: ${{$DATE}}"
+          title: "[Daily update]: ${{$DATE}}"
 
       - name: Check outputs
         run: |
