@@ -24,7 +24,7 @@ Pull request の内容が表示され、Commitのタイトルまたはハッシ�
 
 
 左が変更前で右が変更後の表示になります。  
-また、赤が削除された行で緑が追加になった行を現しています。  
+また、赤が削除された行で緑が追加になった行を表しています。  
 おかしな箇所がないか一通り確認し問題がなければ前の pull request の内容表示に戻ります。
 
 [![Image from Gyazo](https://i.gyazo.com/a2330b6afb01bb3ee67896c7ee4f7c3e.png)](https://github.com/code4akita/covid19-akita/pull/29/commits/8394b628014a59c789280b826b60286d4e2142ef)
