@@ -37,7 +37,7 @@ mergeするか確認表示になりますので、__Confirm merge__ ボタンを
 
 [![Image from Gyazo](https://i.gyazo.com/cce828e5ce1891ca505c44a85870867c.png)](https://gyazo.com/cce828e5ce1891ca505c44a85870867c)
 
-これでデータがdevelopmentブラントに取り込まれました。
+これでデータがdevelopmentブランチに取り込まれました。
 
 ## サイト更新
 
