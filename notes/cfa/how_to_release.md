@@ -13,7 +13,7 @@ Githubアカウントを持っている方向けに説明します。
 Github Actionによって9:00と18:00に秋田県が公表しているサイトからデータをクロールし差分をpull requestとして自動生成します。  
 この差分を確認して問題なければmergeすることでdevelopmentブランチに反映されます。  
 
-生成された pull request は [Pull requestsページ](https://github.com/code4akita/covid19-akita/pull)で確認でき、[Daily Update]から始まるタイトルが該当行になり、クリックします。  
+生成された pull request は [Pull requestsページ](https://github.com/code4akita/covid19-akita/pulls)で確認でき、[Daily Update]から始まるタイトルが該当行になり、クリックします。  
 
 [![Image from Gyazo](https://i.gyazo.com/b7e35f8d15b1ed84bd6b888e97e06697.png)](https://github.com/code4akita/covid19-akita/pulls)
 
