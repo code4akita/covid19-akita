@@ -1,14 +1,9 @@
 {
     "newsItems": [
-        {
-            "date": "2020\/11\/29",
-            "url": "https://www.youtube.com/watch?v=966TSZ6n0yg&feature=youtu.be",
-            "text": "令和2年11月29日「知事臨時記者会見（県外との往来等における感染防止対策の徹底について）」"
-        },
-        {
-            "date": "2020\/11\/26",
-            "url": "https://www.pref.akita.lg.jp/pages/archive/54120",
-            "text": "クラスター発生に関するお知らせ"
-        }
+      {
+            "date": "2020\/01\/18",
+            "url": "https://www.youtube.com/watch?v=JZg7ovJJPEE&feature=youtu.be",
+            "text": "令和3年1月18日「知事臨時記者会見（感染警戒レベル等の引き上げについて）」"
+      }
     ]
 }

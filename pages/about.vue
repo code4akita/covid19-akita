@@ -121,7 +121,7 @@
         <i18n path="詳しくは、{githubRepo}をご確認ください。">
           <template v-slot:githubRepo>
             <a
-              href="https://github.com/asaba-zauberer/covid19/"
+              href="https://github.com/code4akita/covid19-akita"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -130,6 +130,12 @@
           </template>
         </i18n>
       </p>
+    </StaticCard>
+    <StaticCard>
+      <h3>{{ $t('謝辞') }}</h3>
+      <p>{{ $t('このページ(秋田版)の前身を作成した') }}
+        <a href="https://github.com/asaba-zauberer/covid19/" target="_blank" rel="noopener noreferrer">asaba-zauberer</a>
+        {{ $t('氏に感謝申し上げます。') }}</p>
     </StaticCard>
   </div>
 </template>

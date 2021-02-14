@@ -52,7 +52,7 @@
       <footer class="SideNavigation-Footer">
         <div class="SideNavigation-Social">
           <a
-            href="https://github.com/asaba-zauberer/covid19"
+            href="https://github.com/code4akita/covid19-akita"
             target="_blank"
             rel="noopener noreferrer"
             class="SideNavigation-SocialLink"

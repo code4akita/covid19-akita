@@ -95,7 +95,7 @@ export default Vue.extend({
       link: [
         {
           rel: 'canonical',
-          href: `https://covid19-akita.netlify.com/p${this.$route.path}`
+          href: `https://covid19-akita-cfa.netlify.com/p${this.$route.path}`
         },
         {
           rel: 'stylesheet',
@@ -128,7 +128,7 @@ export default Vue.extend({
         {
           hid: 'og:url',
           property: 'og:url',
-          content: `https://covid19-akita.netlify.com/${this.$route.path}`
+          content: `https://covid19-akita-cfa.netlify.com/${this.$route.path}`
         },
         ogLocale,
         {

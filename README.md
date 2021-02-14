@@ -2,7 +2,7 @@
 
 ![](https://github.com/tokyo-metropolitan-gov/covid19/workflows/production%20deploy/badge.svg)
 
-[![秋田県 新型コロナウイルス感染症対策サイト](/static/mainss.png)](https://covid19-akita.netlify.com/)
+[![秋田県 新型コロナウイルス感染症対策サイト](/static/mainss.png)](https://covid19-akita-cfa.netlify.com/)
 
 ### 日本語
 
