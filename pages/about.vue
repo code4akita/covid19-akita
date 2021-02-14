@@ -121,7 +121,7 @@
         <i18n path="詳しくは、{githubRepo}をご確認ください。">
           <template v-slot:githubRepo>
             <a
-              href="https://github.com/asaba-zauberer/covid19/"
+              href="https://github.com/code4akita/covid19-akita"
               target="_blank"
               rel="noopener noreferrer"
             >
