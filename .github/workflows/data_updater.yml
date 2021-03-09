@@ -2,7 +2,7 @@ name: Data updater
 
 on:
   schedule:
-    - cron: '0 9 * * *'
+    - cron: '0 9 * * 1,3,5'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
