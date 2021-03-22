@@ -263,19 +263,19 @@ const options: ThisTypedComponentOptionsWithRecordProps<
                 display: false
               },
               ticks: {
-                fontSize: 9,
-                maxTicksLimit: 20,
+                fontSize: 11,
+                maxTicksLimit: 12,
                 fontColor: '#808080',
                 maxRotation: 0,
                 callback: (label: string) => {
-                  return label.split('/')[1]
+                  return label.split('/').slice(1).join('/')
                 }
               }
               // #2384: If you set "type" to "time", make sure that the bars at both ends are not hidden.
               // #2384: typeをtimeに設定する時はグラフの両端が見切れないか確認してください
             },
             {
-              id: 'month',
+              id: 'year',
               stacked: true,
               gridLines: {
                 drawOnChartArea: false,
@@ -285,21 +285,25 @@ const options: ThisTypedComponentOptionsWithRecordProps<
               },
               ticks: {
                 fontSize: 11,
+                maxTicksLimit: 3,
                 fontColor: '#808080',
                 padding: 3,
                 fontStyle: 'bold',
                 gridLines: {
                   display: true
-                }
+                },
+                callback: (label: string) => {
+                  return label.split('/')[0]
+                },
               },
-              type: 'time',
+              /*type: 'time',
               time: {
-                unit: 'month',
+                unit: 'year',
                 parser: 'M/D',
                 displayFormats: {
                   month: 'MMM'
                 }
-              }
+              }*/
             }
           ],
           yAxes: [

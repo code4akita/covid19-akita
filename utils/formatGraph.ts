@@ -25,8 +25,11 @@ export default (data: DataType[]) => {
       const subTotal = d['小計']
       if (!isNaN(subTotal)) {
         patSum += subTotal
+        let y = 'R' + (date.getFullYear() - 2018).toString()
+        let m = date.getMonth() + 1
+        let d = date.getDate()
         graphData.push({
-          label: `${date.getMonth() + 1}/${date.getDate()}`,
+          label: `${y}/${m}/${d}`,
           transition: subTotal,
           cumulative: patSum
         })
