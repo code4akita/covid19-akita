@@ -7,7 +7,7 @@ require 'time'
 
 class Date
   def iso8601
-    (self.to_time + (17 * 60 * 60)).utc.iso8601.gsub(/00Z/, "00.000Z")
+    self.to_time.iso8601.gsub(/00Z/, "00.000Z")
   end
 end
 
