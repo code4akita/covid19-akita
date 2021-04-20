@@ -129,6 +129,11 @@ export default Vue.extend({
           link: 'https://www.pref.akita.lg.jp/pages/archive/51592'
         },
         {
+          title: this.$t('新型コロナワクチンについて'),
+          link: 'https://www.pref.akita.lg.jp/pages/archive/55754',
+          divider: true
+        },
+        {
           title: this.$t('秋田県知事記者会見'),
           link: 'https://www.pref.akita.lg.jp/pages/genre/21552',
           divider: true
